@@ -38,6 +38,8 @@
 
 - C-v/M-v: scroll down/up
 
+- C-x 0: kill window
+
 - C-x 1: one window on current buffer
 
 - C-x 2: split window vertically
