@@ -24,3 +24,36 @@
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 )
+;; == start company-mode (auto-complete) ==
+(require 'company)
+(global-company-mode t)
+;; == start auto-complete-mode
+(require 'auto-complete)
+(global-auto-complete-mode t)
+;; == define default packages ==
+(defvar jcfrank/packages '(starter-kit
+                           starter-kit-bindings
+                           starter-kit-ruby
+                           ac-c-headers
+                           company
+                           company-go
+                           erlang
+                           json-mode
+                           scala-mode2
+                           yaml-mode
+                           markdown-mode
+                           auto-complete
+                           go-mode) 
+  "Default packages")
+;; == check and install default packages ==
+(defun jcfrank/packages-installed-p ()
+  (loop for pkg in jcfrank/packages
+        when (not (require pkg nil :noerror)) do (return nil)
+        finally (return t)))
+
+(unless (jcfrank/packages-installed-p)
+  (message "%s" "Refreshing package database...")
+  (package-refresh-contents)
+  (dolist (pkg jcfrank/packages)
+    (when (not (require pkg nil :noerror))
+      (package-install pkg))))
