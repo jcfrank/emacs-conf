@@ -31,10 +31,8 @@
 (when (require 'auto-complete nil :noerror)
   (global-auto-complete-mode t))
 ;; == define default packages ==
-(defvar jcfrank/packages '(starter-kit
-                           starter-kit-bindings
-                           starter-kit-ruby
-                           ac-c-headers
+(defvar jcfrank/packages '(starter-kit-ruby
+			   ac-c-headers
                            company
                            company-go
                            erlang
@@ -43,7 +41,8 @@
                            yaml-mode
                            markdown-mode
                            auto-complete
-                           go-mode) 
+                           go-mode
+                           bash-completion) 
   "Default packages")
 ;; == check and install default packages ==
 (defun jcfrank/packages-installed-p ()
