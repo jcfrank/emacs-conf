@@ -42,7 +42,8 @@
                            markdown-mode
                            auto-complete
                            go-mode
-                           bash-completion) 
+                           bash-completion
+                           enh-ruby-mode)
   "Default packages")
 ;; == check and install default packages ==
 (defun jcfrank/packages-installed-p ()
