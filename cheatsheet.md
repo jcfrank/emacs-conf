@@ -24,6 +24,7 @@ C-x 0:      kill window
 C-x 1:      one window on current buffer
 C-x 2:      split window vertically
 C-x 3:      split window horizontally
+C-x o:      switch to another window
 C-x C-f:    find and open file
 C-x C-w:    save file as ...
 C-x b:      select buffer, prompt
