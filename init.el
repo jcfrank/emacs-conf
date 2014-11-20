@@ -72,3 +72,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;set font family for osx
+(if (eq system-type 'darwin)
+  (set-frame-font "Monaco 14" nil t)
+)
+
