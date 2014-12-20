@@ -5,7 +5,7 @@
 ;; == show line number ==
 (setq line-number-mode 1)
 ;; == show column number ==
-;; (column-number-mode 1)
+(setq column-number-mode 1)
 ;; == syntax highlight mode ==
 (setq font-lock-mode 1)
 ;; == search highlight ==
@@ -38,7 +38,6 @@
                            company-go
                            erlang
                            json-mode
-                           scala-mode2
                            yaml-mode
                            markdown-mode
                            auto-complete
@@ -59,6 +58,12 @@
   (dolist (pkg jcfrank/packages)
     (when (not (require pkg nil :noerror))
       (package-install pkg))))
+
+;;set font family for osx
+(if (eq system-type 'darwin)
+  (set-frame-font "Monaco 13" nil t)
+)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -72,9 +77,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;;set font family for osx
-(if (eq system-type 'darwin)
-  (set-frame-font "Monaco 14" nil t)
-)
 
