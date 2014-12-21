@@ -37,6 +37,7 @@
                            company
                            company-go
                            erlang
+                           edts
                            json-mode
                            yaml-mode
                            markdown-mode
