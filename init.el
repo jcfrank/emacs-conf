@@ -62,7 +62,7 @@
 
 ;;set font family for osx
 (if (eq system-type 'darwin)
-  (set-frame-font "Monaco 13" nil t)
+  (set-frame-font "Courier 14" nil t)
 )
 
 ;;add after-init-hook to init edts
@@ -83,7 +83,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (zenburn)))
- '(custom-safe-themes (quote ("146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" default))))
+ '(custom-safe-themes (quote ("146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" default)))
+ '(edts-man-root "/Users/jcfrank7/.emacs.d/edts/doc/17.4"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
