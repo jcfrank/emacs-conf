@@ -3,13 +3,15 @@
 ;; == set default indent to use spaces ==
 (setq indent-tabs-mode nil)
 ;; == show line number ==
-(setq line-number-mode 1)
+(line-number-mode 1)
 ;; == show column number ==
-(setq column-number-mode 1)
+(column-number-mode 1)
 ;; == syntax highlight mode ==
-(setq font-lock-mode 1)
+(global-font-lock-mode t)
 ;; == search highlight ==
-(setq search-highlight 1)
+(setq search-highlight t)
+;;== highlight parentheses ==
+(show-paren-mode 1)
 
 ;; == let backup files saved in emacs.d/backup ==
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -31,7 +33,7 @@
 )
 
 ;; == add ~/.emacs.d/ into load-path
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
 
 ;; == start company-mode (auto-complete) ==
 (when (require 'company nil :noerror)
@@ -88,6 +90,6 @@
     (exec-path-from-shell-initialize))
 
 ;;add dirtree plugin
-(load "dirtree")
-(require 'dirtree nil :noerror)
+(when (load "dirtree" :noerror)
+    (require 'dirtree))
 
