@@ -45,8 +45,6 @@
 ;; == define default packages ==
 (defvar default-packages '(ac-c-headers
                            company
-                           erlang
-                           edts
                            json-mode
                            yaml-mode
                            markdown-mode
@@ -77,15 +75,6 @@
   (set-frame-font "Courier 14" nil t)
 )
 
-;;add after-init-hook to init edts
-;;EDTS has a weird bug. If it's freshly installed, we need to go to
-;;"~/.emacs.d/elpa/edts-..../" and run "make".
-;;Otherwise there would be "server not started" error.
-(add-hook 'after-init-hook 'init-modes)
-(defun init-modes ()
-  (require 'edts-start)
-)
-
 ;;copy PATH from SHELL to exec-path when in osx
 (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
@@ -93,4 +82,9 @@
 ;;add dirtree plugin
 (when (load "dirtree" :noerror)
     (require 'dirtree))
+
+;;add smex
+(when (require 'smex nil :noerror)
+    (smex-initialize)
+    (global-set-key (kbd "M-x") 'smex))
 
