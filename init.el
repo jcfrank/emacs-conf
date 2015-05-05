@@ -55,7 +55,8 @@
                            bash-completion
                            exec-path-from-shell
 			   windata
-			   tree-mode)
+			   tree-mode
+			   smex)
   "Default packages")
 ;; == check and install default packages ==
 (defun check-default-packages ()
