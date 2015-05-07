@@ -54,7 +54,8 @@
                            exec-path-from-shell
 			   windata
 			   tree-mode
-			   smex)
+			   smex
+			   expand-region)
   "Default packages")
 ;; == check and install default packages ==
 (defun check-default-packages ()
@@ -87,4 +88,8 @@
 (when (require 'smex nil :noerror)
     (smex-initialize)
     (global-set-key (kbd "M-x") 'smex))
+
+;;add expand-region
+(when (require 'expand-region nil :noerror)
+    (global-set-key (kbd "C-=") 'er/expand-region))
 
