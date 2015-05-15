@@ -1,5 +1,5 @@
 ;; == set standard indent ==
-(setq standard-indent 4)
+(setq standard-indent 2)
 ;; == set default indent to use spaces ==
 (setq indent-tabs-mode nil)
 ;; == show line number ==
@@ -33,7 +33,8 @@
 )
 
 ;; == add ~/.emacs.d/ into load-path
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
+(add-to-list 'load-path 
+  (expand-file-name "lisp" user-emacs-directory))
 
 ;; == start company-mode (auto-complete) ==
 (when (require 'company nil :noerror)
@@ -43,19 +44,12 @@
   (global-auto-complete-mode t))
 
 ;; == define default packages ==
-(defvar default-packages '(ac-c-headers
-                           company
-                           json-mode
-                           yaml-mode
-                           markdown-mode
+(defvar default-packages '(company
                            auto-complete
-                           go-mode
                            bash-completion
                            exec-path-from-shell
-			   windata
-			   tree-mode
-			   smex
-			   expand-region)
+                           smex
+                           expand-region)
   "Default packages")
 ;; == check and install default packages ==
 (defun check-default-packages ()
@@ -73,16 +67,12 @@
 
 ;;set font family for osx
 (if (eq system-type 'darwin)
-  (set-frame-font "Courier 14" nil t)
+  (set-frame-font "Courier 12" nil t)
 )
 
 ;;copy PATH from SHELL to exec-path when in osx
 (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
-
-;;add dirtree plugin
-(when (load "dirtree" :noerror)
-    (require 'dirtree))
 
 ;;add smex
 (when (require 'smex nil :noerror)
