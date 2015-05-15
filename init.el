@@ -44,8 +44,13 @@
   (global-auto-complete-mode t))
 
 ;; == define default packages ==
-(defvar default-packages '(company
+(defvar default-packages '(ac-c-headers
+                           company
+                           json-mode
+                           yaml-mode
+                           markdown-mode
                            auto-complete
+                           go-mode
                            bash-completion
                            exec-path-from-shell
                            smex
