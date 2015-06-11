@@ -12,6 +12,8 @@
 (setq search-highlight t)
 ;;== highlight parentheses ==
 (show-paren-mode 1)
+;;== no tab ==
+(setq-default indent-tabs-mode nil)
 
 ;; == let backup files saved in emacs.d/backup ==
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -55,7 +57,8 @@
                            bash-completion
                            exec-path-from-shell
                            smex
-                           expand-region)
+                           expand-region
+                           powerline)
   "Default packages")
 ;; == check and install default packages ==
 (defun check-default-packages ()
