@@ -29,6 +29,7 @@
   (add-to-list 'package-archives '("elpy" . "http://jorgenschaefer.github.io/packages/"))
   (add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/"))
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
   (package-initialize)
 )
 
@@ -87,4 +88,8 @@
 ;;add expand-region
 (when (require 'expand-region nil :noerror)
     (global-set-key (kbd "C-=") 'er/expand-region))
+
+;;add powerline
+(when (require 'powerline nil :noerror)
+    (powerline-default-theme))
 
