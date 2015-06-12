@@ -58,7 +58,8 @@
                            exec-path-from-shell
                            smex
                            expand-region
-                           powerline)
+                           powerline
+                           xcscope)
   "Default packages")
 ;; == check and install default packages ==
 (defun check-default-packages ()
@@ -95,4 +96,8 @@
 ;;add powerline
 (when (require 'powerline nil :noerror)
     (powerline-default-theme))
+
+;;add xcscope
+(when (require 'xcscope)
+    (cscope-setup))
 
