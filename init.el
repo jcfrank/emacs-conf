@@ -59,8 +59,10 @@
                            smex
                            expand-region
                            powerline
+                           erlang
                            xcscope)
   "Default packages")
+
 ;; == check and install default packages ==
 (defun check-default-packages ()
   (setq res t)
@@ -100,4 +102,7 @@
 ;;add xcscope
 (when (require 'xcscope)
     (cscope-setup))
+
+;; erlang mode
+(require 'erlang-start)
 
