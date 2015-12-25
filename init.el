@@ -47,18 +47,24 @@
   (global-auto-complete-mode t))
 
 ;; == define default packages ==
-(defvar default-packages '(ac-c-headers
+(defvar default-packages '(org
+                           find-file-in-project
+                           auto-complete
                            company
+                           smex
+                           powerline
+                           ac-c-headers
                            json-mode
                            yaml-mode
                            markdown-mode
-                           auto-complete
+                           ac-c-headers
+                           json-mode
+                           yaml-mode
+                           markdown-mode
                            go-mode
                            bash-completion
                            exec-path-from-shell
-                           smex
                            expand-region
-                           powerline
                            erlang
                            xcscope)
   "Default packages")
@@ -105,4 +111,8 @@
 
 ;; erlang mode
 (require 'erlang-start)
+
+;; find-file-in-project
+(when (require 'find-file-in-project nil :noerror)
+    (global-set-key (kbd "C-x p") 'find-file-in-project))
 
