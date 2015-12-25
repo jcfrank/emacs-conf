@@ -10,9 +10,9 @@
 (global-font-lock-mode t)
 ;; == search highlight ==
 (setq search-highlight t)
-;;== highlight parentheses ==
+;; == highlight parentheses ==
 (show-paren-mode 1)
-;;== no tab ==
+;; == no tab ==
 (setq-default indent-tabs-mode nil)
 
 ;; == let backup files saved in emacs.d/backup ==
@@ -116,3 +116,57 @@
 (when (require 'find-file-in-project nil :noerror)
     (global-set-key (kbd "C-x p") 'find-file-in-project))
 
+;; set only for OS X Emacs.app
+(defun set-osx-theme ()
+  ;; set theme
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(custom-enabled-themes (quote (wombat)))
+   '(custom-safe-themes (quote ("3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" default)))
+   '(fci-rule-color "#383838")
+   '(vc-annotate-background "#2B2B2B")
+   '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
+   '(vc-annotate-very-old-color "#DC8CC3"))
+
+  ;; set font faces
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Droid_Sans_Mono_for_Powerline")))))
+
+  ;; set pwd
+  (setq command-line-default-directory "/Users/jcfrank7")
+)
+
+;; set for Emacs in X
+(defun set-x-theme ()
+  ;; set frame size
+  (set-frame-size (selected-frame) 80 30)
+
+  ;; set theme
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(custom-enabled-themes (quote (wombat))))
+
+  ;; set faces
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 121 :width normal :foundry "monotype" :family "Monospace")))))
+)
+
+;; set env by runtime
+(case window-system
+  ('ns (set-osx-theme))
+  ('x (set-x-theme))
+)
