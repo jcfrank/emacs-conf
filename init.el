@@ -58,6 +58,7 @@
                            exec-path-from-shell
                            expand-region
                            erlang
+                           projectile
                            xcscope)
   "Default packages")
 
@@ -106,9 +107,13 @@
   (setq standard-indent 2)
 ))
 
-;; find-file-in-project
+;; add find-file-in-project
 (require 'find-file-in-project)
 (global-set-key (kbd "C-x p") 'find-file-in-project)
+
+;; add projectile
+(setq projectile-indexing-method 'native)
+(projectile-global-mode)
 
 ;; ## set theme for OS X Emacs.app
 (defun set-osx-theme ()
