@@ -112,7 +112,6 @@
 (global-set-key (kbd "C-x p") 'find-file-in-project)
 
 ;; add projectile
-(setq projectile-indexing-method 'native)
 (projectile-global-mode)
 
 ;; ## set theme for OS X Emacs.app
@@ -183,3 +182,9 @@
   ('x (set-x-theme))
   ('nil (set-term-theme))
 )
+
+;; set eshell default
+(setq explicit-shell-file-name "/usr/local/bin/fish")
+(setq shell-file-name "fish")
+(setq explicit-fish-args '("--login"))
+(setenv "SHELL" shell-file-name)
