@@ -39,27 +39,23 @@
   (expand-file-name "lisp" user-emacs-directory))
 
 ;; define default packages
-(defvar default-packages '(org
-                           find-file-in-project
-                           auto-complete
-                           company
-                           smex
-                           powerline
-                           ac-c-headers
-                           json-mode
-                           yaml-mode
-                           markdown-mode
-                           ac-c-headers
-                           json-mode
-                           yaml-mode
-                           markdown-mode
-                           go-mode
+(defvar default-packages '(async
                            bash-completion
+                           company
+                           company-c-headers
                            exec-path-from-shell
                            expand-region
-                           erlang
+                           find-file-in-project
+                           go-mode
+                           helm
+                           json-mode
+                           markdown-mode
+                           org
+                           powerline
                            projectile
-                           xcscope)
+                           smex
+                           xcscope
+                           yaml-mode)
   "Default packages")
 
 ;; check and install default packages
@@ -78,16 +74,16 @@
 
 ;; start company-mode (auto-complete)
 (require 'company)
-(global-company-mode t)
+(add-hook 'after-init-hook 'global-company-mode)
 
-;; start auto-complete-mode
-(require 'auto-complete)
-(global-auto-complete-mode t)
+;; smex
+;(require 'smex)
+;(smex-initialize)
+;(global-set-key (kbd "M-x") 'smex)
 
-;; add smex
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+;; helm
+(require 'helm)
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; add expand-region
 (require 'expand-region)
@@ -101,18 +97,53 @@
 (require 'xcscope)
 (cscope-setup)
 
-;; erlang mode
-(add-hook 'erlang-mode-hook (lambda ()
-  (require 'erlang-start)
-  (setq standard-indent 2)
-))
-
 ;; add find-file-in-project
 (require 'find-file-in-project)
 (global-set-key (kbd "C-x p") 'find-file-in-project)
 
 ;; add projectile
 (projectile-global-mode)
+
+;; bash-completion
+(autoload 'bash-completion-dynamic-complete
+  "bash-completion"
+  "BASH completion hook"
+)
+(add-hook 'shell-dynamic-complete-functions
+  'bash-completion-dynamic-complete
+)
+
+;; go-mode
+(require 'go-mode-autoloads)
+
+;; markdown-mode
+(autoload 'markdown-mode
+  "markdown-mode"
+  "Major mode for editing Markdown files"
+  t
+)
+(add-to-list 'auto-mode-alist
+  '("\\.markdown\\'" . markdown-mode)
+  '("\\.md\\'" . markdown-mode)
+)
+
+;; org-mode
+(add-to-list 'auto-mode-alist
+  '("\\.org\\'" . org-mode)
+  '("\\.om\\'" . org-mode)
+)
+
+;; yaml-mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist
+  '("\\.yaml$" . yaml-mode)
+  '("\\.yml$" . yaml-mode)
+)
+
+;; company-c-headers
+(add-hook 'c-mode-hook
+  (add-to-list 'company-backends 'company-c-headers)
+)
 
 ;; ## set theme for OS X Emacs.app
 (defun set-osx-theme ()
