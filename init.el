@@ -141,8 +141,11 @@
 )
 
 ;; company-c-headers
-(add-hook 'c-mode-hook
-  (add-to-list 'company-backends 'company-c-headers)
+(require 'company-c-headers)
+(add-hook 'c-mode-common-hook
+  (lambda ()
+    (add-to-list 'company-backends 'company-c-headers)
+  )
 )
 
 ;; ## set theme for OS X Emacs.app
