@@ -83,7 +83,9 @@
 
 ;; helm
 (require 'helm)
+(setq helm-M-x-fuzzy-match t)
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; add expand-region
 (require 'expand-region)
