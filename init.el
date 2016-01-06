@@ -219,9 +219,3 @@
   ('x (set-x-theme))
   ('nil (set-term-theme))
 )
-
-;; set eshell default
-(setq explicit-shell-file-name "/usr/local/bin/fish")
-(setq shell-file-name "fish")
-(setq explicit-fish-args '("--login"))
-(setenv "SHELL" shell-file-name)
