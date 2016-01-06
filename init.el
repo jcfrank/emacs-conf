@@ -58,6 +58,7 @@
     smex
     xcscope
     yaml-mode
+    flx-ido
   )
 "Default packages")
 
@@ -152,6 +153,14 @@
     (add-to-list 'company-backends 'company-c-headers)
   )
 )
+
+;; flx-ido for fuzzy ido
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
 
 ;; ## set theme for OS X Emacs.app
 (defun set-osx-theme ()
