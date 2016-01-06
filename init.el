@@ -129,14 +129,15 @@
   t
 )
 (add-to-list 'auto-mode-alist
-  '("\\.markdown\\'" . markdown-mode)
-  '("\\.md\\'" . markdown-mode)
+  '("\\.markdown$" . markdown-mode)
+  '("\\.md$" . markdown-mode)
 )
 
 ;; org-mode
+(require 'org)
 (add-to-list 'auto-mode-alist
-  '("\\.org\\'" . org-mode)
-  '("\\.om\\'" . org-mode)
+  '("\\.org$" . org-mode)
+  '("\\.om$" . org-mode)
 )
 
 ;; yaml-mode
