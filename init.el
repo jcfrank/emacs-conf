@@ -29,7 +29,7 @@
   (require 'package)
   (add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/")) ; gnu
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; for org mode
   (package-initialize)
 )
@@ -39,24 +39,27 @@
   (expand-file-name "lisp" user-emacs-directory))
 
 ;; define default packages
-(defvar default-packages '(async
-                           bash-completion
-                           company
-                           company-c-headers
-                           exec-path-from-shell
-                           expand-region
-                           find-file-in-project
-                           go-mode
-                           helm
-                           json-mode
-                           markdown-mode
-                           org
-                           powerline
-                           projectile
-                           smex
-                           xcscope
-                           yaml-mode)
-  "Default packages")
+(defvar default-packages 
+  '(
+    async
+    bash-completion
+    company
+    company-c-headers
+    exec-path-from-shell
+    expand-region
+    find-file-in-project
+    go-mode
+    helm
+    json-mode
+    markdown-mode
+    org
+    powerline
+    projectile
+    smex
+    xcscope
+    yaml-mode
+  )
+"Default packages")
 
 ;; check and install default packages
 (defun check-default-packages ()
@@ -159,10 +162,7 @@
 
   ;; set theme
   (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
+   ;; custom-set-variables added by Custom.
    '(custom-enabled-themes (quote (wombat)))
    '(custom-safe-themes (quote ("3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" default)))
    '(fci-rule-color "#383838")
@@ -172,10 +172,7 @@
 
   ;; set font faces
   (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
+   ;; custom-set-faces added by Custom.
    '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Droid_Sans_Mono_for_Powerline")))))
 
   ;; set pwd
@@ -189,18 +186,12 @@
 
   ;; set theme
   (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
+   ;; custom-set-variables added by Custom.
    '(custom-enabled-themes (quote (wombat))))
 
   ;; set faces
   (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
+   ;; custom-set-faces added by Custom.
    '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 121 :width normal :foundry "monotype" :family "Monospace")))))
 )
 
