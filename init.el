@@ -83,17 +83,13 @@
 ;; smex
 ;(require 'smex)
 ;(smex-initialize)
-;(global-set-key (kbd "M-x") 'smex)
 
 ;; helm
 (require 'helm)
 (setq helm-M-x-fuzzy-match t)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; add expand-region
 (require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; add powerline
 (require 'powerline)
@@ -104,8 +100,8 @@
 (cscope-setup)
 
 ;; add find-file-in-project
+;; key bindings were moved to a general area
 (require 'find-file-in-project)
-(global-set-key (kbd "C-x p") 'find-file-in-project)
 
 ;; add projectile
 (projectile-global-mode)
@@ -162,6 +158,14 @@
 (flx-ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
+
+;; key-bindings
+;(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-x b") 'ibuffer)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x p") 'find-file-in-project)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; ## set theme for OS X Emacs.app
 (defun set-osx-theme ()
