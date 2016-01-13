@@ -164,7 +164,8 @@
 (global-set-key (kbd "C-x b") 'ibuffer)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x p") 'find-file-in-project)
+(global-set-key (kbd "C-c f") 'find-file-in-project)
+(global-set-key (kbd "C-c s") 'helm-occur)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; ## set theme for OS X Emacs.app
