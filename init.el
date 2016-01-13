@@ -176,13 +176,39 @@
 
   ;; set theme
   (custom-set-variables
-   ;; custom-set-variables added by Custom.
-   '(custom-enabled-themes (quote (wombat)))
-   '(custom-safe-themes (quote ("3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" "282606e51ef2811142af5068bd6694b7cf643b27d63666868bc97d04422318c1" default)))
-   '(fci-rule-color "#383838")
-   '(vc-annotate-background "#2B2B2B")
-   '(vc-annotate-color-map (quote ((20 . "#BC8383") (40 . "#CC9393") (60 . "#DFAF8F") (80 . "#D0BF8F") (100 . "#E0CF9F") (120 . "#F0DFAF") (140 . "#5F7F5F") (160 . "#7F9F7F") (180 . "#8FB28F") (200 . "#9FC59F") (220 . "#AFD8AF") (240 . "#BFEBBF") (260 . "#93E0E3") (280 . "#6CA0A3") (300 . "#7CB8BB") (320 . "#8CD0D3") (340 . "#94BFF3") (360 . "#DC8CC3"))))
-   '(vc-annotate-very-old-color "#DC8CC3"))
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(ansi-color-faces-vector
+     [default bold shadow italic underline bold bold-italic bold])
+   '(custom-enabled-themes (quote (misterioso)))
+   '(custom-safe-themes
+     (quote
+      ("4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
+   '(fci-rule-color "#eee8d5")
+   '(vc-annotate-background nil)
+   '(vc-annotate-color-map
+     (quote
+      ((20 . "#dc322f")
+       (40 . "#cb4b16")
+       (60 . "#b58900")
+       (80 . "#859900")
+       (100 . "#2aa198")
+       (120 . "#268bd2")
+       (140 . "#d33682")
+       (160 . "#6c71c4")
+       (180 . "#dc322f")
+       (200 . "#cb4b16")
+       (220 . "#b58900")
+       (240 . "#859900")
+       (260 . "#2aa198")
+       (280 . "#268bd2")
+       (300 . "#d33682")
+       (320 . "#6c71c4")
+       (340 . "#dc322f")
+       (360 . "#cb4b16"))))
+   '(vc-annotate-very-old-color nil))
 
   ;; set font faces
   (custom-set-faces
