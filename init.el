@@ -15,9 +15,6 @@
 ;; no tab
 (setq-default indent-tabs-mode nil)
 
-;; for legacy case
-(require 'cl)
-
 ;; let backup files saved in emacs.d/backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying 1    ; Don't delink hardlinks
@@ -250,14 +247,15 @@
 ;; set theme for terminal
 (defun set-term-theme ()  
   ;; set font faces for OS X
-  (cl-case system-type
-    ('darwin (set-frame-font "Courier 12" nil t))
+  (pcase system-type
+    (`darwin (set-frame-font "Courier 12" nil t))
   )
 )
 
 ;; set env by runtime
-(cl-case window-system
-  ('ns (set-osx-theme))
-  ('x (set-x-theme))
-  ('nil (set-term-theme))
+(pcase window-system
+  (`ns (set-osx-theme))
+  (`x (set-x-theme))
+  (`nil (set-term-theme))
+  (unknown (message "Unknonw window system %s!\n" unknown))
 )
