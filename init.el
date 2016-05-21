@@ -167,6 +167,9 @@
   )
 )
 
+;; auto pair
+(electric-pair-mode t)
+
 ;; key-bindings
 ;(global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x b") 'ibuffer)
