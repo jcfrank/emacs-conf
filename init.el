@@ -1,3 +1,4 @@
+
 ;; set standard indent
 (setq standard-indent 4)
 ;; set default indent to use spaces
@@ -27,10 +28,21 @@
 ;; add MELPA, Marmalade into package management
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/")) ; gnu
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; for org mode
+  (add-to-list
+   'package-archives
+   '("elpa" . "http://elpa.gnu.org/packages/")) ; gnu
+  (add-to-list
+   'package-archives
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t)
+  (add-to-list
+   'package-archives
+   '("marmalade" . "http://marmalade-repo.org/packages/")
+   t)
+  (add-to-list
+   'package-archives
+   '("org" . "http://orgmode.org/elpa/")
+   t) ; for org mode
   (package-initialize)
 )
 
