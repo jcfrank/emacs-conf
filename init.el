@@ -246,17 +246,12 @@
 ;; set theme for Emacs in X
 (defun set-x-theme ()
   ;; set frame size
-  (set-frame-size (selected-frame) 80 30)
+  (set-frame-size (selected-frame) 80 35)
 
   ;; set theme
   (custom-set-variables
    ;; custom-set-variables added by Custom.
    '(custom-enabled-themes (quote (wombat))))
-
-  ;; set faces
-  (custom-set-faces
-   ;; custom-set-faces added by Custom.
-   '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 121 :width normal :foundry "monotype" :family "Monospace")))))
 )
 
 ;; set theme for terminal
