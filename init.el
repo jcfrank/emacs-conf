@@ -1,3 +1,4 @@
+;;-*- mode: lisp -*- vim:set syntax=lisp:
 
 ;; set standard indent
 (setq standard-indent 4)
@@ -45,10 +46,6 @@
    t) ; for org mode
   (package-initialize)
 )
-
-;; add ~/.emacs.d/ into load-path
-(add-to-list 'load-path 
-  (expand-file-name "lisp" user-emacs-directory))
 
 ;; define default packages
 (defvar default-packages 
