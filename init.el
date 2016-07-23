@@ -5,6 +5,7 @@
 ;; set default indent to use spaces
 (setq indent-tabs-mode nil)
 ;; show line number
+(global-linum-mode t)
 (setq line-number-mode t)
 ;; show column number
 (setq column-number-mode t)
@@ -69,7 +70,7 @@
     yaml-mode
     flx-ido
     erlang
-  )
+    linum-relative)
 "Default packages")
 
 ;; check and install default packages
@@ -178,6 +179,10 @@
 
 ;; auto pair
 (electric-pair-mode t)
+
+;; relative line number
+(require 'linum-relative)
+(linum-relative-on)
 
 ;; key-bindings
 ;(global-set-key (kbd "M-x") 'smex)
