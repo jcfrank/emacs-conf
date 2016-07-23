@@ -69,7 +69,6 @@
     xcscope
     yaml-mode
     flx-ido
-    erlang
     linum-relative)
 "Default packages")
 
@@ -169,13 +168,6 @@
 (flx-ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
-
-;; erlang mode
-(add-hook 'erlang-mode-hook
-  (lambda ()
-    (require 'erlang-start)
-  )
-)
 
 ;; auto pair
 (electric-pair-mode t)
