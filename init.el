@@ -2,7 +2,8 @@
 
 ;; set standard indent
 (setq standard-indent 4)
-;; set default indent to use spaces
+;; set indent to use spaces
+(setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 ;; show line number
 (global-linum-mode t)
@@ -15,8 +16,6 @@
 (setq search-highlight t)
 ;; highlight parentheses
 (setq show-paren-mode t)
-;; no tab
-(setq-default indent-tabs-mode nil)
 
 ;; let backup files saved in emacs.d/backup
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -50,8 +49,7 @@
 
 ;; define default packages
 (defvar default-packages 
-  '(
-    async
+  '(async
     bash-completion
     company
     company-c-headers
