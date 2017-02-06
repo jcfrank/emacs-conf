@@ -6,6 +6,7 @@
 (setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 ;; show line number
+(setq linum-format "%4d ")
 (global-linum-mode t)
 (setq line-number-mode t)
 ;; show column number
@@ -168,6 +169,7 @@
 
 ;; relative line number
 (require 'linum-relative)
+(setq linum-relative-format "%2s ")
 (linum-relative-on)
 
 ;; key-bindings
