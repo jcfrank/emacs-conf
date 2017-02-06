@@ -56,7 +56,6 @@
     exec-path-from-shell
     expand-region
     find-file-in-project
-    go-mode
     helm
     json-mode
     markdown-mode
@@ -122,9 +121,6 @@
 (add-hook 'shell-dynamic-complete-functions
   'bash-completion-dynamic-complete
 )
-
-;; go-mode
-(require 'go-mode-autoloads)
 
 ;; markdown-mode
 (autoload 'markdown-mode
