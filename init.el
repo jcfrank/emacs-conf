@@ -24,6 +24,12 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; For Emacs < 29, install use-package if it doesn't exist
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+
 ;; Package list
 (use-package company :ensure t)
 (use-package ledger-mode :ensure t)
